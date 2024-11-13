@@ -14,8 +14,8 @@
     <script>
         function sendMood(mood) {
             if (Telegram.WebApp) {
+                console.log("Отправка настроения:", mood);  // Сообщение в консоли для диагностики
                 Telegram.WebApp.sendData(mood);  // Отправка выбранного настроения обратно в бота
-                console.log("Отправлено настроение:", mood);  // Диагностика в консоли браузера
             } else {
                 console.error("Telegram Web App API не найден.");
             }
