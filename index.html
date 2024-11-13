@@ -13,7 +13,12 @@
 
     <script>
         function sendMood(mood) {
-            Telegram.WebApp.sendData(mood);  // Отправка выбранного настроения обратно в бота
+            if (Telegram.WebApp) {
+                Telegram.WebApp.sendData(mood);  // Отправка выбранного настроения обратно в бота
+                console.log("Отправлено настроение:", mood);  // Диагностика в консоли браузера
+            } else {
+                console.error("Telegram Web App API не найден.");
+            }
         }
     </script>
 </body>
