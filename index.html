@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Выбор настроения</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <h2>Выберите свое настроение</h2>
+    <h1>Выберите настроение:</h1>
     <button onclick="sendMood('Плохое')">Плохое</button>
     <button onclick="sendMood('Нормальное')">Нормальное</button>
     <button onclick="sendMood('Отличное')">Отличное</button>
 
     <script>
-        // Функция для отправки данных в Telegram Web App
         function sendMood(mood) {
-            Telegram.WebApp.sendData(mood);  // Отправка данных боту
+            Telegram.WebApp.sendData(mood);  // Отправка выбранного настроения обратно в бота
         }
-
-        // Инициализация Web App
-        Telegram.WebApp.ready();
     </script>
 </body>
 </html>
